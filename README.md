@@ -1,4 +1,4 @@
 store.mx
 ========
 use this repository to add store procedures
-Test modification
+This project is for learning porpuses, feel free to change anything :D
