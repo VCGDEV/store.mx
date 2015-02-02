@@ -24,6 +24,6 @@ public class Unidad implements Serializable{
 	public void setIdUnidad(int idUnidad){this.idUnidad=idUnidad;}
 	public int getIdUnidad(){return this.idUnidad;}
 	public void setUnidad(String unidad){this.unidad = unidad;}
-	public String getUnidad(){return this.unidad;}
+	public String getUnidad(){return this.unidad;} 
 }
 
