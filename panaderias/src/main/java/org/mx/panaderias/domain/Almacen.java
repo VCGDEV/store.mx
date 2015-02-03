@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.CascadeType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 /**
 * @Autor vcgdev
 * @version 1.0
@@ -18,9 +20,9 @@ import javax.persistence.CascadeType;
 */
 @Entity
 @Table(name="Almacen")
-public class Almacen implements Serializable{
+public class Almacen implements java.io.Serializable{
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="idAlmacen")
 	private int idAlmacen;
 	@Column(name="nombre",nullable=false)
@@ -34,7 +36,7 @@ public class Almacen implements Serializable{
 		this.productos = productos;
 	}
 
-	@OnetToMany(fetch=FetchType.LAZY,mappedBy="pk.almacen",cascade=CascadeType.ALL)
+	@OneToMany(fetch=FetchType.LAZY,mappedBy="pk.almacen",cascade=CascadeType.ALL)
 	public Set<Producto> getProductos(){
 		return this.productos;
 	}

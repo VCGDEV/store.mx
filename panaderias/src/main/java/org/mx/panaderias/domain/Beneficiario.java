@@ -13,7 +13,7 @@ import javax.persistence.Column;
 */
 @Entity
 @Table(name="Beneficiario")
-public class Beneficiario implements Serializable{
+public class Beneficiario implements java.io.Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="idBeneficiario")
@@ -25,7 +25,7 @@ public class Beneficiario implements Serializable{
 	@Column(name="tipoBeneficiario")
 	private int tipoBeneficiario;// 1 empleado, 2 cliente, 3 proveedor
 	@Column(name="idDireccion")
-	private int idDreccion;//direccion fiscal del beneficiario
+	private int idDireccion;//direccion fiscal del beneficiario
 
 	/**
 	*getters y setters

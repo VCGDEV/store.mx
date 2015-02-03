@@ -17,9 +17,9 @@ import javax.persistence.EmbeddedId;
 */
 @Entity
 @Table(name="Producto")
-public class Producto implements Serializable{
+public class Producto implements java.io.Serializable{
 	@Id
-	@GeneratedValue(startegy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="idProducto")
 	private int idProducto;
 	@Column(name="codigo",nullable=false)
@@ -48,7 +48,7 @@ public class Producto implements Serializable{
 	public int getIdUnidad(){ return this.idUnidad; }
 	public void setPrecioCompra(BigDecimal precioCompra){ this.precioCompra = precioCompra; }
 	public BigDecimal getPrecioDecimal(){ return this.precioCompra; }
-	public void setPrecioVenta(BigDecimla precioVenta){ this.precioVenta = precioVenta; }
+	public void setPrecioVenta(BigDecimal precioVenta){ this.precioVenta = precioVenta; }
 	public BigDecimal getPrecioVenta(){ return this.precioVenta; }
 	
 }

@@ -13,9 +13,9 @@ import javax.persistence.GenerationType;
 
 @Entity
 @Table(name="Unidades")
-public class Unidad implements Serializable{
+public class Unidad implements java.io.Serializable{
 	@Id
-	@GeneratedValue(strategy=GenerationTyoe.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="idUnidades")
 	private int idUnidad;
 	@Column(name="unidad",nullable=false)

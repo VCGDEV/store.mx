@@ -23,7 +23,7 @@ public class AlmacenProducto implements java.io.Serializable{
 	private AlmacenProductoId pk = new AlmacenProductoId();
 	
 	@Column(name="stockminimo",nullable=false)
-	private BigDecimal stockMininmo;
+	private BigDecimal stockMinimo;
 	@Column(name="stock",nullable=false)
 	private BigDecimal stock;
 	
@@ -42,7 +42,7 @@ public class AlmacenProducto implements java.io.Serializable{
 
 	@Transient
 	public Producto getProducto(){
-		getPk().getProducto();
+		return getPk().getProducto();
 	}
 			
 	public void setProducto(Producto producto){

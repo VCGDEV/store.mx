@@ -13,7 +13,7 @@ import javax.persistence.Column;
 */
 @Entity
 @Table(name="Familias")
-public class Familia implements Serializable{
+public class Familia implements java.io.Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="idFamilias")
@@ -22,7 +22,7 @@ public class Familia implements Serializable{
 	private String familia;
 
 	public void setIdFamilia(int idFamilia){this.idFamilia=idFamilia;}
-	public String getIdFamilia(){return this.idFamilia;}
+	public int getIdFamilia(){return this.idFamilia;}
 	public void setFamilia(String familia){this.familia=familia;}
-	public String getFamilia(){return this.idFamilia;}
+	public String getFamilia(){return this.familia;}
 }
