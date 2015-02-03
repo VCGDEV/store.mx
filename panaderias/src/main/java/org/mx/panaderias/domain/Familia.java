@@ -21,7 +21,7 @@ public class Familia implements Serializable{
 	@Column(name="familia",nullable=false)
 	private String familia;
 
-	private void setIdFamilia(int idFamilia){this.idFamilia=idFamilia;}
+	public void setIdFamilia(int idFamilia){this.idFamilia=idFamilia;}
 	public String getIdFamilia(){return this.idFamilia;}
 	public void setFamilia(String familia){this.familia=familia;}
 	public String getFamilia(){return this.idFamilia;}
