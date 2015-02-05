@@ -30,14 +30,14 @@ public class Almacen implements java.io.Serializable{
 	@Column(name="idDireccion")
 	private int idDireccion;
 			
-	private Set<Producto> productos = new HashSet<Producto>(0);
+	private Set<AlmacenProducto> productos = new HashSet<AlmacenProducto>(0);
 	
-	public void setProductos(Set<Producto> productos){
+	public void setProductos(Set<AlmacenProducto> productos){
 		this.productos = productos;
 	}
 
 	@OneToMany(fetch=FetchType.LAZY,mappedBy="pk.almacen",cascade=CascadeType.ALL)
-	public Set<Producto> getProductos(){
+	public Set<AlmacenProducto> getProductos(){
 		return this.productos;
 	}
 	

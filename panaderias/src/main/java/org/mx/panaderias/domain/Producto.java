@@ -10,6 +10,10 @@ import java.math.BigDecimal;
 import javax.persistence.AssociationOverride;
 import javax.persistence.AssociationOverrides;
 import javax.persistence.EmbeddedId;
+import javax.persistence.OneToMany;
+import javax.persistence.FetchType;
+import java.util.Set;
+import java.util.HashSet;
 /**
 * @Author vcgdev
 * @version 1.0
@@ -35,6 +39,7 @@ public class Producto implements java.io.Serializable{
 	@Column(name="precioVenta",nullable=false)
 	private BigDecimal precioVenta;
 
+	private Set<AlmacenProducto> almacenes = new HashSet<AlmacenProducto>(0);
 
 	public void setIdProducto(int idProducto){ this.idProducto = idProducto; }
 	public int getIdProducto(){ return this.idProducto; }
@@ -50,5 +55,14 @@ public class Producto implements java.io.Serializable{
 	public BigDecimal getPrecioDecimal(){ return this.precioCompra; }
 	public void setPrecioVenta(BigDecimal precioVenta){ this.precioVenta = precioVenta; }
 	public BigDecimal getPrecioVenta(){ return this.precioVenta; }
-	
+
+	@OneToMany(fetch=FetchType.LAZY,mappedBy="pk.Producto")
+	public Set<AlmacenProducto> getAlmacenes(){ 
+		return this.almacenes;
+	}
+
+	public void setAlmacenes(Set<AlmacenProducto> almacenes){
+		this.almacenes = almacenes;
+	}
 }
+

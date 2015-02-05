@@ -2,7 +2,9 @@ package org.mx.panaderias.domain;
 
 import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
-
+/**
+* para relacion n-m Almacen-Productos
+**/
 @Embeddable
 public class AlmacenProductoId implements java.io.Serializable{
 	private Almacen almacen;

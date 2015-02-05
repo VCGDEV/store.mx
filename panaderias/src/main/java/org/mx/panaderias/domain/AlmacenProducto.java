@@ -16,7 +16,8 @@ import java.math.BigDecimal;
 
 
 
-
+@Entity
+@Table(name="Almacen_has_Producto")
 @AssociationOverrides({@AssociationOverride(name = "pk.almacen",joinColumns = @JoinColumn(name = "idAlmacen"))
 		      ,@AssociationOverride(name = "pk.producto", joinColumns = @JoinColumn(name = "idProducto")) })
 public class AlmacenProducto implements java.io.Serializable{
