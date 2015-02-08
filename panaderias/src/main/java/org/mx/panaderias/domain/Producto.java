@@ -39,6 +39,7 @@ public class Producto implements java.io.Serializable{
 	@Column(name="precioVenta",nullable=false)
 	private BigDecimal precioVenta;
 
+	@OneToMany(fetch=FetchType.LAZY,mappedBy="pk.producto")
 	private Set<AlmacenProducto> almacenes = new HashSet<AlmacenProducto>(0);
 
 	public void setIdProducto(int idProducto){ this.idProducto = idProducto; }
@@ -56,7 +57,7 @@ public class Producto implements java.io.Serializable{
 	public void setPrecioVenta(BigDecimal precioVenta){ this.precioVenta = precioVenta; }
 	public BigDecimal getPrecioVenta(){ return this.precioVenta; }
 
-	@OneToMany(fetch=FetchType.LAZY,mappedBy="pk.Producto")
+	
 	public Set<AlmacenProducto> getAlmacenes(){ 
 		return this.almacenes;
 	}

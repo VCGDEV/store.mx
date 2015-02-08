@@ -35,9 +35,9 @@
 	<!-- Define contexto de la base de datos -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/dbname"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/panaderias"/>
         <property name="username" value="root"/>
-        <property name="password" value="123456"/>
+        <property name="password" value="vcgdev"/>
     </bean>
-
+    <bean id="beneficiarioDao" class="org.mx.panaderias.daoimpl.BeneficiarioDaoImpl"/>
 </beans>

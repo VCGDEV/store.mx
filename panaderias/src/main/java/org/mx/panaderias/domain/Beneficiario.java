@@ -31,7 +31,7 @@ public class Beneficiario implements java.io.Serializable{
 	@Column(name="activo")
 	private boolean activo;
 	@OneToOne
-	@JoinColumn(name="idDireccion",insertable=true,updatable=true)
+	@JoinColumn(name="idDireccion",insertable=false,updatable=false)
 	private Direccion direccion;
 
 	/**

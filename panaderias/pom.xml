@@ -9,6 +9,7 @@
   <url>http://maven.apache.org</url>
   <properties>
 	<spring.version>3.1.2.RELEASE</spring.version>
+	<jpa.version>1.7.2.RELEASE</jpa.version>
   </properties>
   <dependencies>
     <dependency>
@@ -36,12 +37,12 @@
 	<dependency>
 		<groupId>org.slf4j</groupId>
 		<artifactId>slf4j-api</artifactId>
-		<version>1.5.11</version>
+		<version>1.6.0</version>
 	</dependency>
 	<dependency>
 		<groupId>org.slf4j</groupId>
 		<artifactId>slf4j-log4j12</artifactId>
-		<version>1.5.11</version>
+		<version>1.6.0</version>
 	</dependency>
 	<dependency>
 		<groupId>mysql</groupId>
@@ -92,12 +93,22 @@
 	<dependency>
 		<groupId>org.springframework.data</groupId>
 		<artifactId>spring-data-jpa</artifactId>
-		<version>1.2.0.RELEASE</version>
+		<version>${jpa.version}</version>
 	</dependency>	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
 	<dependency>
 		<groupId>javax.annotation</groupId>
 		<artifactId>jsr250-api</artifactId>
 		<version>1.0</version>
+	</dependency>
+	<dependency>
+		<groupId>commons-dbcp</groupId>
+		<artifactId>commons-dbcp</artifactId>
+		<version>1.2.2</version>
 	</dependency>
   </dependencies>
   <build>

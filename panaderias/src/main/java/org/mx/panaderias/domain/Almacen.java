@@ -29,14 +29,13 @@ public class Almacen implements java.io.Serializable{
 	private String nombre;
 	@Column(name="idDireccion")
 	private int idDireccion;
-			
+	@OneToMany(fetch=FetchType.LAZY,mappedBy="pk.almacen",cascade=CascadeType.ALL)			
 	private Set<AlmacenProducto> productos = new HashSet<AlmacenProducto>(0);
 	
 	public void setProductos(Set<AlmacenProducto> productos){
 		this.productos = productos;
 	}
-
-	@OneToMany(fetch=FetchType.LAZY,mappedBy="pk.almacen",cascade=CascadeType.ALL)
+	
 	public Set<AlmacenProducto> getProductos(){
 		return this.productos;
 	}
