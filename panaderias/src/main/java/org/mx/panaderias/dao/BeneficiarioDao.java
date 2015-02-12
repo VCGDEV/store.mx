@@ -8,7 +8,7 @@ import java.util.List;
 * 
 **/
 public interface BeneficiarioDao{
-	boolean save(Beneficiario beneficiario);
+	boolean save(Beneficiario beneficiario) throws Exception;
 	boolean updateOrDelete(Beneficiario beneficiario);
 	Beneficiario findBeneficiario(int idBeneficiario);
 	List<Beneficiario> findBeneficiario(String nombre,int tipoBeneficiario);	

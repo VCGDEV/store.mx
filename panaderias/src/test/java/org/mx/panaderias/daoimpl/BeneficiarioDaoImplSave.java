@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
  
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
@@ -26,10 +27,31 @@ public class BeneficiarioDaoImplSave{
 	private BeneficiarioDao beneficiarioDao;
 
 	@Test
+	@Rollback(true)
 	public void testSave(){
 		System.out.println("Runing save Test");
 		Beneficiario beneficiario = new Beneficiario();
 		beneficiario.setNombre("Victor de la Cruz Gonzalez");
-		assertEquals(false,beneficiarioDao.save(beneficiario));
+		beneficiario.setRfc("CGA030903UC3");
+		beneficiario.setTipoBeneficiario(1);// Empleado
+		beneficiario.setActivo(true);
+		Direccion direccion = new Direccion();
+		direccion.setEstado("Hidalgo");
+		direccion.setMunicipio("Tulancingo de Bravo");
+		direccion.setLocalidad("Tulancingo");
+		direccion.setColonia("Centro");
+		direccion.setCalle("Hidalgo");
+		direccion.setNumeroExterior("SN");
+		direccion.setNumeroInterior("SN");
+		direccion.setTelefonos("01-555-555-5555");
+		direccion.setCorreo("vcg_cruz@hotmail.com");
+		beneficiario.setDireccion(direccion);
+		try{
+			assertEquals(true,beneficiarioDao.save(beneficiario));
+			System.out.println("Getting beneficiario info");
+			assertEquals(8,beneficiarioDao.findBeneficiario(8).getIdBeneficiario());
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
 	}
 }

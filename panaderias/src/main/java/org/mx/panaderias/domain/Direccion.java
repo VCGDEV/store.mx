@@ -56,11 +56,13 @@ public class Direccion implements Serializable{
 	public String getMunicipio(){return this.municipio;}
 	public void setLocalidad(String localidad){this.localidad = localidad;}
 	public String getLocalidad(){return this.localidad;}
+	public void setColonia(String colonia){ this.colonia = colonia; }
+	public String getColonia(){ return this.colonia;}
 	public void setCalle(String calle){ this.calle=calle;}
 	public String getCalle(){return this.calle;}
 	public void setNumeroExterior(String numeroExterior){this.numeroExterior = numeroExterior;}
 	public String getNumeroExterior(){return this.numeroExterior;}
-	public void setNumerInterior(String numeroInterior){this.numeroInterior = numeroInterior;}
+	public void setNumeroInterior(String numeroInterior){this.numeroInterior = numeroInterior;}
 	public String getNumeroInterior(){return this.numeroInterior;}
 	public void setTelefonos(String telefonos){this.telefonos = telefonos;}
 	public String getTelefonos(){return this.telefonos;}

@@ -50,4 +50,5 @@ public class Beneficiario implements java.io.Serializable{
 	public void setDireccion(Direccion direccion){ this.direccion = direccion; }
 	public void setActivo(boolean activo){ this.activo = activo; }
 	public boolean isActivo(){ return this.activo; }
+	public Direccion getDireccion(){ return this.direccion;}
 }

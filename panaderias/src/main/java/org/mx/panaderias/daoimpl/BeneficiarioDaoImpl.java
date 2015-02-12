@@ -18,14 +18,11 @@ public class BeneficiarioDaoImpl implements BeneficiarioDao{
 	public void setEm(EntityManager em){ this.em = em; }
 
 	@Transactional(readOnly=false)
-	public boolean save(Beneficiario  beneficiario){
-		try{
-			em.persist(beneficiario);
-			return true;
-		}catch(Exception ex){	
-			ex.printStackTrace();
-		}
-		return false;
+	public boolean save(Beneficiario  beneficiario) throws Exception{
+		em.persist(beneficiario.getDireccion());
+		beneficiario.setIdDireccion(beneficiario.getDireccion().getIdDireccion());
+		em.persist(beneficiario);
+		return true;
 	}
 
 	public boolean updateOrDelete(Beneficiario beneficiario){
@@ -34,13 +31,14 @@ public class BeneficiarioDaoImpl implements BeneficiarioDao{
 	}
 
 	public Beneficiario findBeneficiario(int idBeneficiario){
-		//not implemented yet
-		return null;
+		return em.find(Beneficiario.class,idBeneficiario);
 	}	
 
 	public List<Beneficiario> findBeneficiario(String nombre,int tipoBeneficiario){
-		//not implemented yet
-		return null;
+		query = em.createQuery("SELECT b FROM Beneficiario b WHERE b.nombre LIKE :nombre AND b.tipoBeneficario=:tipo");
+		query.setParameter("nombre","%"+nombre+"%");
+		query.setParameter("tipo",tipoBeneficiario);
+		return query.getResultList();
 	}
 
 	public	boolean addLoginData(Usuario usuario){
