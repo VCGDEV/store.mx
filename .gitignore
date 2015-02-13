@@ -16,4 +16,4 @@ proguard/
 # Log Files
 *.log
 #target
-target/
+panaderias/target/
