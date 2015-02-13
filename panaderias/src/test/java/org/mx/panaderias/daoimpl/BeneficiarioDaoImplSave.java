@@ -47,11 +47,11 @@ public class BeneficiarioDaoImplSave{
 		direccion.setCorreo("vcg_cruz@hotmail.com");
 		beneficiario.setDireccion(direccion);
 		try{
-			assertEquals(true,beneficiarioDao.save(beneficiario));
-			System.out.println("Getting beneficiario info");
-			assertEquals(8,beneficiarioDao.findBeneficiario(8).getIdBeneficiario());
+			assertTrue(beneficiarioDao.save(beneficiario));
 		}catch(Exception ex){
 			ex.printStackTrace();
 		}
 	}
+
+
 }

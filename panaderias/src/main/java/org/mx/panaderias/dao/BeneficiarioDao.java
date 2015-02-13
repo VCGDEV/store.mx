@@ -15,4 +15,5 @@ public interface BeneficiarioDao{
 	boolean addLoginData(Usuario usuario);
 	boolean editLoginData(Usuario usuario);
 	Usuario findUsuario(int idBeneficiario);
+	Usuario findUsuario(String userName,String pwd);
 }
