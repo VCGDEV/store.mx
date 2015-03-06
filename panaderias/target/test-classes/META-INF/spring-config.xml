@@ -35,13 +35,13 @@
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>
 	
-	<!-- Define contexto de la base de datos -->
+	<!-- Define contexto de la base de datos <bean id="beneficiarioDao" class="org.mx.panaderias.daoimpl.BeneficiarioDaoImpl"/> -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" >
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/panaderias"/>
         <property name="username" value="testuser"/>
         <property name="password" value="123456"/>
     </bean>
-    <bean id="beneficiarioDao" class="org.mx.panaderias.daoimpl.BeneficiarioDaoImpl"/>
+    
     <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>

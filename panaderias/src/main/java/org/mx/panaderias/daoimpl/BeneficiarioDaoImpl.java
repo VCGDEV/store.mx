@@ -37,7 +37,7 @@ public class BeneficiarioDaoImpl implements BeneficiarioDao{
 	}	
 
 	public List<Beneficiario> findBeneficiario(String nombre,int tipoBeneficiario){
-		query = em.createQuery("SELECT b FROM Beneficiario b WHERE b.nombre LIKE :nombre AND b.tipoBeneficario=:tipo");
+		query = em.createQuery("SELECT b FROM Beneficiario b WHERE b.nombre LIKE :nombre AND b.tipoBeneficiario=:tipo");
 		query.setParameter("nombre","%"+nombre+"%");
 		query.setParameter("tipo",tipoBeneficiario);
 		return query.getResultList();

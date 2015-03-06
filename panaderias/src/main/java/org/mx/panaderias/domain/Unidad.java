@@ -20,10 +20,14 @@ public class Unidad implements java.io.Serializable{
 	private int idUnidad;
 	@Column(name="unidad",nullable=false)
 	private String unidad;
+	@Column(name="activo")
+	private boolean activo;
 
 	public void setIdUnidad(int idUnidad){this.idUnidad=idUnidad;}
 	public int getIdUnidad(){return this.idUnidad;}
 	public void setUnidad(String unidad){this.unidad = unidad;}
-	public String getUnidad(){return this.unidad;} 
+	public String getUnidad(){return this.unidad;}
+	public void setActivo(boolean activo){ this.activo=activo; }
+	public boolean isActivo(){ return this.activo; } 
 }
 

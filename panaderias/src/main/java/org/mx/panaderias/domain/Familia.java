@@ -20,9 +20,13 @@ public class Familia implements java.io.Serializable{
 	private int idFamilia;
 	@Column(name="familia",nullable=false)
 	private String familia;
+	@Column(name="activo",nullable=false)
+	private boolean activo;
 
 	public void setIdFamilia(int idFamilia){this.idFamilia=idFamilia;}
 	public int getIdFamilia(){return this.idFamilia;}
 	public void setFamilia(String familia){this.familia=familia;}
 	public String getFamilia(){return this.familia;}
+	public void setActivo(boolean activo){ this.activo = activo; }
+	public boolean isActivo(){ return this.activo; }
 }
