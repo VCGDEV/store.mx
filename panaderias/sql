@@ -1,0 +1,14 @@
+create table app.productos (
+	idProducto integer not null,
+	codigo varchar(20),
+	descripcion varchar(100),
+	idFamilia integer,
+	idUnidad integer,
+	precioCompra float,
+	precioVenta float
+)
+
+
+select * from productos;
+
+insert into productos values(1, '001', 'producto1', 1,1, 10,10)
