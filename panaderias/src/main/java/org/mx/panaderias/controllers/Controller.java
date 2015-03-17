@@ -3,6 +3,8 @@ package org.mx.panaderias.controllers;
 import java.io.IOException;
 import java.net.URL;
 
+import org.mx.panaderias.App;
+import org.mx.panaderias.SpringFXMLLoader;
 import org.mx.panaderias.domain.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,13 +19,9 @@ public class Controller {
 	@FXML
 	Pane content;
 	
-	@Autowired
-	Producto producto;
-	
 	public void mostrarMensaje() throws IOException {
 		content.getChildren().clear();
-		URL url = getClass().getResource("Productos.fxml");
-		Pane pane = FXMLLoader.load(url);
+		Pane pane = (Pane) App.loader.load("Productos.fxml");
 		content.getChildren().add(pane);
 		System.out.println("Contenido:" + content.getChildren());
 	}

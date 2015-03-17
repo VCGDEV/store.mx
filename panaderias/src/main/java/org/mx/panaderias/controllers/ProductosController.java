@@ -12,8 +12,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.util.StringConverter;
 
+import org.mx.panaderias.daoimpl.ProductosDAOImpl;
 import org.mx.panaderias.domain.Producto;
-import org.mx.panaderias.domain.ProductoWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class ProductosController implements Initializable {
@@ -24,7 +24,10 @@ public class ProductosController implements Initializable {
 	@FXML TextField precioCompra;
 	@FXML TextField precioVenta;
 	
-	ProductoWrapper productoW = new ProductoWrapper();
+	@Autowired
+	ProductosDAOImpl productosDAO;
+	
+	Producto productoW = new Producto();
 	StringConverter integerSC = new StringConverter<Integer>() {
 		public Integer fromString(String arg0) { return Integer.parseInt(arg0); }
 		public String toString(Integer arg0)   { return String.valueOf(arg0); }
@@ -36,8 +39,7 @@ public class ProductosController implements Initializable {
 	};
 	
 	public void mostrarMensaje() {
-		 System.out.println(productoW.toString());
-	    System.out.println(productoW.getProducto().toString());
+		productosDAO.guardarProducto(productoW);
 	}
 
 	@Override
