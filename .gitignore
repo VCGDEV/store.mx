@@ -17,3 +17,7 @@ proguard/
 *.log
 #target
 panaderias/target/
+panaderias/.classpath
+panaderias/.project
+panaderias/.settings/org.eclipse.jdt.core.prefs
+panaderias/.classpath

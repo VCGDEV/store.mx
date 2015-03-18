@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:jpa="http://www.springframework.org/schema/data/jpa"
-    xsi:schemaLocation="
-        http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-        http://www.springframework.org/schema/context
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd
-        http://www.springframework.org/schema/data/jpa
-        http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
 	<!-- inyeccion de dependencias  @Component, @Repository e @Service -->
     <context:component-scan base-package="org.mx.panaderias" />
+    <context:annotation-config/>
+    <tx:annotation-driven  transaction-manager="transactionManager"/>
     
     <!-- configuracion de jpa -->
     <bean id="entityManagerFactory"
@@ -21,7 +25,7 @@
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 				<property name="generateDdl" value="true" />
-				<property name="database" value="MYSQL" />
+				<property name="database" value="DERBY" />
 			</bean>
 		</property>
 		<property name="persistenceUnitName" value="appSwingSpringUnit" />
@@ -31,13 +35,23 @@
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>
+    
 	
 	<!-- Define contexto de la base de datos -->
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+<!--     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/panaderias"/>
         <property name="username" value="testuser"/>
         <property name="password" value="123456"/>
-    </bean>
+    </bean> -->
+      <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+        <property name="url" value="jdbc:derby:c:\\database\\panaderiasDB;create=true"/>
+		<property name="initialSize" value="5" />
+    	<property name="maxActive" value="50" />
+    </bean> 
     <bean id="beneficiarioDao" class="org.mx.panaderias.daoimpl.BeneficiarioDaoImpl"/>
+    <bean id="productosDAO" class="org.mx.panaderias.daoimpl.ProductosDAOImpl"/>
+    <bean id="controller" class="org.mx.panaderias.controllers.Controller"/>
+    <bean id="productosController" class="org.mx.panaderias.controllers.ProductosController"/>
 </beans>

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package org.mx.panaderias;
 
 import java.io.InputStream;
