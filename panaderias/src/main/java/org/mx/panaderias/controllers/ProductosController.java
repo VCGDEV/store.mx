@@ -38,7 +38,7 @@ public class ProductosController implements Initializable {
 		
 	};
 	
-	public void mostrarMensaje() {
+	public void guardarDatos() {
 		productosDAO.guardarProducto(productoW);
 	}
 

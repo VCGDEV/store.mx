@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
@@ -31,43 +32,52 @@
       </MenuBar>
       <VBox layoutY="27.0" prefHeight="373.0" prefWidth="110.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Ventas">
+            <Button mnemonicParsing="false" onAction="#pantallaVentas" prefHeight="25.0" prefWidth="98.0" text="Ventas">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="30.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Clientes">
+            <Button mnemonicParsing="false" onAction="#pantallaClientes" prefHeight="25.0" prefWidth="98.0" text="Clientes">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Personal">
+            <Button mnemonicParsing="false" onAction="#pantallaPersonal" prefHeight="25.0" prefWidth="98.0" text="Personal">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#mostrarMensaje" prefHeight="25.0" prefWidth="98.0" text="Productos">
+            <Button mnemonicParsing="false" onAction="#pantallaProductos" prefHeight="25.0" prefWidth="98.0" text="Productos">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Inventario">
+            <Button mnemonicParsing="false" onAction="#pantallaInventario" prefHeight="25.0" prefWidth="98.0" text="Inventario">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Compras">
+            <Button mnemonicParsing="false" onAction="#pantallaCompras" prefHeight="25.0" prefWidth="98.0" text="Compras">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Configuración">
+            <Button mnemonicParsing="false" onAction="#pantallaConfiguracion" prefHeight="25.0" prefWidth="98.0" text="Configuración">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                </VBox.margin>
             </Button>
          </children>
       </VBox>
-      <Pane fx:id="content" layoutX="109.0" layoutY="27.0" prefHeight="397.0" prefWidth="600.0" style="-fx-background-color: white;" />
+      <Pane fx:id="content" layoutX="109.0" layoutY="95.0" prefHeight="329.0" prefWidth="600.0" style="-fx-background-color: white;" />
+      <Separator layoutX="121.0" layoutY="90.0" prefHeight="5.0" prefWidth="576.0" />
+      <Label alignment="CENTER" layoutX="309.0" layoutY="34.0" prefHeight="31.0" prefWidth="391.0" text="Sistema de Punto de Venta" textAlignment="RIGHT" wrapText="true">
+         <effect>
+            <Reflection fraction="1.0" topOpacity="0.27" />
+         </effect>
+         <font>
+            <Font name="Lucida Sans Regular" size="26.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

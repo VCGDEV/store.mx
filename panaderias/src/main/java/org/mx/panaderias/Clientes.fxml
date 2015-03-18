@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="329.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mx.panaderias.controllers.PersonasController">
+   <children>
+      <Button layoutX="447.0" layoutY="288.0" mnemonicParsing="false" onAction="#guardarDatos" text="Guardar" />
+      <Button layoutX="515.0" layoutY="288.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Salir" />
+      <GridPane layoutX="45.0" layoutY="14.0" prefHeight="231.0" prefWidth="299.0">
+         <children>
+            <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" style="-fx-padding: 10;" text="Nombre" />
+            <TextField fx:id="nombre" prefHeight="25.0" prefWidth="162.0" GridPane.columnIndex="1" />
+            <Label alignment="BOTTOM_RIGHT" contentDisplay="CENTER" style="-fx-padding: 10;" text="Dirección" GridPane.rowIndex="1" />
+            <TextField fx:id="direccion" prefHeight="25.0" prefWidth="219.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" style="-fx-padding: 10;" text="RFC" GridPane.rowIndex="2" />
+            <TextField fx:id="rfc" prefHeight="25.0" prefWidth="219.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" style="-fx-padding: 10;" text="Teléfono" GridPane.rowIndex="3" />
+            <TextField fx:id="telefono" prefHeight="25.0" prefWidth="219.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" style="-fx-padding: 10;" text="Celular" GridPane.rowIndex="4" />
+            <TextField fx:id="celular" prefHeight="25.0" prefWidth="219.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" style="-fx-padding: 10;" text="Email" GridPane.rowIndex="5" />
+            <TextField fx:id="email" prefHeight="25.0" prefWidth="219.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+   </children>
+</Pane>

@@ -54,4 +54,7 @@
     <bean id="productosDAO" class="org.mx.panaderias.daoimpl.ProductosDAOImpl"/>
     <bean id="controller" class="org.mx.panaderias.controllers.Controller"/>
     <bean id="productosController" class="org.mx.panaderias.controllers.ProductosController"/>
+    <bean id="operacionesController" class="org.mx.panaderias.controllers.OperacionesController"/>
+    <bean id="personasController" class="org.mx.panaderias.controllers.PersonasController"/>
+    
 </beans>
