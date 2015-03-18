@@ -20,6 +20,7 @@ public class Controller {
 	Pane content;
 	
 	public void mostrarMensaje() throws IOException {
+
 		content.getChildren().clear();
 		Pane pane = (Pane) App.loader.load("Productos.fxml");
 		content.getChildren().add(pane);

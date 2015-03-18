@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package org.mx.panaderias;
 
 import java.io.InputStream;
@@ -49,3 +50,4 @@ public class App extends Application
 		stage.show();
 	}
 }
+

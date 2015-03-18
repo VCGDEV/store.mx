@@ -1,3 +1,6 @@
 /META-INF/
 /log4j.properties
 /org/
+/panaderias/.classpath
+/panaderias/.project
+/panaderias/.settings/org.eclipse.jdt.core.prefs

@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 -------------------------------------------------------------------------------
 Test set: org.mx.panaderias.daoimpl.BeneficiarioDaoImplSave
 -------------------------------------------------------------------------------
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.953 sec
+=======
+-------------------------------------------------------------------------------
+Test set: org.mx.panaderias.daoimpl.BeneficiarioDaoImplSave
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.953 sec
+>>>>>>> deb1a1f972bf1f62bbbf2a4455bcc75d355a6411

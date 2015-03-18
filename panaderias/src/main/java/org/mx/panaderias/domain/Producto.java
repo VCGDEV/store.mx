@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package org.mx.panaderias.domain;
 
 import javafx.beans.property.DoubleProperty;
