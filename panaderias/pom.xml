@@ -9,7 +9,7 @@
   <name>panaderias</name>
   <url>http://maven.apache.org</url>
   <properties>
-	<spring.version>4.3.2.RELEASE</spring.version>
+	<spring.version>4.3.18.RELEASE</spring.version>
 	<jpa.version>1.7.2.RELEASE</jpa.version>
   </properties>
   <dependencies>
